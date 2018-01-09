@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.ibm.services</groupId>
+  <artifactId>ywebapp</artifactId>
+  <packaging>war</packaging>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>ywebapp Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <distributionManagement>
+  	<snapshotRepository>
+  		<id>jfrog</id>
+  		<name>ywebapp</name>
+  		<url>http://bviswanath:8081/artifactory/ywebapp-lr</url>
+  	</snapshotRepository>
+  	<repository>
+  		<id>jfrog</id>
+  		<name>ywebapp</name>
+  		<url>http://bviswanath:8081/artifactory/ywebapp-lr</url>
+  	</repository>
+  </distributionManagement>
+  <build>
+    <finalName>ywebapp</finalName>
+            <pluginManagement>
+      <plugins>
+        <plugin>
+           <!-- https://mvnrepository.com/artifact/org.apache.tomcat.maven/tomcat7-maven-plugin -->
+
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+              <configuration>
+                 <url>http://bviswanath:8001/manager/text</url>
+                 <server>tcdeployserver</server>
+              </configuration>
+              
+            </plugin>
+            
+            
+       </plugins>
+       
+    </pluginManagement>
+  </build>
+</project>
